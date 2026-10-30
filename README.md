@@ -16,7 +16,7 @@ Projektet är byggt från grunden med följande teknik:
 ## Projektstruktur
 Mappstrukturen i repot är uppdelad enligt följande:
 ```text
-├── design/             # Wireframes, mockups 
+├── design/             # Wireframes, mockups, stilreferens 
 ├── docs/               # Källkod publicerad via GitHub Pages
 │   ├── css/            # Stilfiler
 │   ├── js/             # Interaktivitet och övrig logik i JavaScript
