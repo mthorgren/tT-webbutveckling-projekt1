@@ -48,6 +48,28 @@ img {
     display: block;     
 }
 
+/* Apply generic headings/fonts details */
+p {
+    font-family: var(--font-body);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+}
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+}
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+}
+h3 {
+    font-family: var(--font-heading);
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+}
+
 /* Base structure */
 
 body {
@@ -99,38 +121,9 @@ window.addEventListener('scroll', () => {
 header.scrolled nav a {
     padding: 0.3rem 1rem;   
 }
-footer {
-    width: 100%;
-    background-color: var(--surface-light);
-    color: var(--text-dark);
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
 
 
-/* Apply generic headings/fonts details */
-p {
-    font-family: var(--font-body);
-    font-size: var(--body-size);
-    font-weight: var(--body-weight);
-}
-h1 {
-    font-family: var(--font-heading);
-    font-size: var(--h1-size);
-    font-weight: var(--h1-weight);
-}
-h2 {
-    font-family: var(--font-heading);
-    font-size: var(--h2-size);
-    font-weight: var(--h2-weight);
-}
-h3 {
-    font-family: var(--font-heading);
-    font-size: var(--h3-size);
-    font-weight: var(--h3-weight);
-}
+
 
 /* specifics */
 .banner {
@@ -207,12 +200,39 @@ nav a.active::after {
     vertical-align: middle;
 }
 
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: top;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--surface-light);
+    color: var(--text-dark);
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
 
 
 /* Logotype detailing */
 #logo::first-letter, #footer-logo::first-letter {
     color: var(--accent-crimson);
 }
+
+
 
 /* Fix centered gui to allow reasonable stretching only */
 #contact-form, 
