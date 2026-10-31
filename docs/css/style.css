@@ -137,21 +137,7 @@ nav a:first-child {
     border-left: 1px solid var(--border-dark);
 }
 
-
-
 /* Active navigation link red dot indicator */
-nav a.active::after {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    margin-left: 6px;
-    vertical-align: middle;
-}
-
-/* Specific styling */
 nav a.active {
     color: var(--text-dark);
 }
