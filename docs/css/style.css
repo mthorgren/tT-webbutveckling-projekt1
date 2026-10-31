@@ -94,7 +94,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     width: 100%;
     background-color: var(--surface-light);
     display: flex;
@@ -129,6 +128,7 @@ header.scrolled nav a {
 .banner {
     background-color: var(--surface-light);
     color: var(--text-dark);
+    padding-left: 10px;
 }
 
 .banner p {
@@ -167,7 +167,7 @@ nav li:first-child {                                /* Manual leftmost border en
 nav a {
     color: var(--text-muted-dark);
     text-decoration: none;
-    padding: 1.4rem 1.5rem; 
+    padding: 1.6rem 1.5rem; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,14 +227,6 @@ nav a.active::after {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-.portrait-meta {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-    width: 100%;
-    max-width: 280px; 
 }
 
 footer {
