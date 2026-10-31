@@ -1,3 +1,43 @@
+/* Base variables */
+:root {
+    /* Theme */
+    --bg-dark: #121212;          
+    --surface-light: #FFFFFF;   
+    
+    --text-dark: #0F0F0F;        /* Black for text on light surfaces */
+    --text-muted-dark: #717171;  /* Grey for light surfaces */
+    --text-light: #FAFAFA;       /* Off-white for text on dark surfaces */
+    --text-muted-light: #A0A0A0; /* Grey for dark surfaces */
+    
+    --accent-crimson: #FF1E27;
+    --link-blue: #0066CC;        /* Blue for links */
+    
+    --border-light: #E5E5E5;
+    --border-dark: #2D2D2D;
+
+    /* Font details */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --h1-size: 17px;
+    --h1-weight: 700;           
+
+    --tagline-size: 13px;
+    --tagline-weight: 400;      
+
+    --h2-size: 15px;
+    --h2-weight: 500;           
+
+    --nav-size: 13px;
+    --nav-weight: 500;          
+
+    --body-size: 13px;
+    --body-weight: 400;         
+}
+
+
+/* Specific styling */
+
 nav a.active::after {
     content: "";
     display: inline-block;
