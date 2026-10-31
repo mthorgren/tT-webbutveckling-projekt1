@@ -42,6 +42,12 @@
     padding: 0;
 }
 
+img {
+    max-width: 100%;    
+    height: auto;      
+    display: block;     
+}
+
 /* Base structure */
 
 body {
@@ -114,6 +120,10 @@ h3 {
 }
 
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     width: 100%;
     max-width: 768px;
     background-color: var(--surface-light);
