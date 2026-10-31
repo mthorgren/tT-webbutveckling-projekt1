@@ -19,16 +19,16 @@
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'DM Sans', sans-serif;
 
-    --h1-size: 17px;
-    --h1-weight: 700;           
+    --h1-size: 20px;
+    --h1-weight: 700;              
 
-    --tagline-size: 13px;
-    --tagline-weight: 400;      
+    --h2-size: 17px;
+    --h2-weight: 500;        
+    
+    --h3-size: 15px;
+    --h3-weight: 500;     
 
-    --h2-size: 15px;
-    --h2-weight: 500;           
-
-    --nav-size: 13px;
+    --nav-size: 14px;
     --nav-weight: 500;          
 
     --body-size: 13px;
@@ -58,6 +58,38 @@ main {
     width: 100%;
     margin: 0 auto;
     padding: 3rem 1.5rem;
+}
+
+/* Apply generic headings/fonts details */
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+}
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+}
+h3 {
+    font-family: var(--font-heading);
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+}
+
+/* Header, navigation */
+header {
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.banner {
+    background-color: var(--surface-light);
+    color: var(--text-dark);
+}
+
+.banner p {
+    color: var(--text-muted-dark);
 }
 
 /* Specific styling */
