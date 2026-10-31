@@ -239,7 +239,17 @@ footer {
     align-items: center; 
 }
 
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
 
+/* FIX footer links horisontal align on mobile */
 
 /* Logotype detailing */
 #logo::first-letter, #footer-logo::first-letter {
@@ -271,5 +281,11 @@ footer {
         gap: 1rem;
         
     }
-
+    .footer-links {
+        gap: 8.5rem;
+        width: unset;
+        justify-content: unset;
+        padding-left: unset;
+        padding-right: unset;
+    }
 }
