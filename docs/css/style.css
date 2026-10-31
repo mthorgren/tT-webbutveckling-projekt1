@@ -57,7 +57,7 @@ main {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 1rem 1.5rem;
 }
 
 /* Apply generic headings/fonts details */
@@ -85,7 +85,6 @@ h3 {
 /* Header, navigation */
 header {
     background-color: var(--bg-dark);
-    border-bottom: 1px solid var(--border-light);
 }
 
 .banner {
@@ -98,9 +97,8 @@ header {
 }
 
 nav {
-    height: 60px;
+    height: fit-content;
     background-color: var(--surface-light);
-    border-bottom: 1px solid var(--border-dark);
     display: flex;
     align-items: center;
     padding: 0rem 0rem 0rem 0rem;
@@ -139,9 +137,7 @@ nav a:first-child {
     border-left: 1px solid var(--border-dark);
 }
 
-nav a:hover {
-    color: var(--accent-crimson);
-}
+
 
 /* Active navigation link red dot indicator */
 nav a.active::after {
@@ -159,6 +155,11 @@ nav a.active::after {
 nav a.active {
     color: var(--text-dark);
 }
+
+nav a:hover {
+    color: var(--accent-crimson);
+}
+
 nav a.active::after {
     content: "";
     display: inline-block;
