@@ -31,7 +31,7 @@
                 </article>
                 <article id="overview-highlight" class="highlight"> <!-- selected highlight changes with dom/selection -->
                     <h2>home inventory</h2> 
-                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" alt="empty placeholder image">
+                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" class="highlight-media" alt="empty placeholder image">
                     <!-- placeholder for embedded element (video, prototype, image)
                         <insert embedded logic>
                     -->
@@ -40,28 +40,38 @@
             </section>
             <section id="project-previews">
                 <article id="wikifier" class="preview-card active">
-                    <!-- placeholder for embedded element (video, prototype, image)
-                        <insert embedded logic>
+                    <!-- 
+                        <insert example embedded logic for video or iframe>
                     -->
-                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" alt="empty placeholder image">
+                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" class="preview-media" alt="empty placeholder image">
                     <h3>home inventory</h3>
-                    <p>home inventory short summary</p>
+                    <p class="card-description">
+                        home inventory short summary
+                    </p>
+                    <button class="dropdown-button" aria-label="Toggle preview text">
+                        <img src="images/arrow_down.svg" alt="" class="arrow-icon">
+                    </button>
                  </article>
                  <article id="home-inventory" class="preview-card">
-                    <!-- placeholder for embedded element (video, prototype, image)
-                        <insert embedded logic>
-                    -->                    
-                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" alt="empty placeholder image">                            
+    
+                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" class="preview-media" alt="empty placeholder image">                            
                     <h3>wikifier inventory</h3>
-                    <p>wikifier short summary</p>
+                    <p class="card-description">
+                        wikifier short summary
+                    </p>
+                    <button class="dropdown-button" aria-label="Toggle preview text">
+                        <img src="images/arrow_down.svg" alt="" class="arrow-icon">
+                    </button>
                  </article>
                  <article id="unnamed-project" class="preview-card">
-                    <!-- placeholder for embedded element (video, prototype, image)
-                        <insert embedded logic>
-                    -->                    
-                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" alt="empty placeholder image">
+                    <img id="wikifier-preview-image" src="images/picture_placeholder.svg" class="preview-media" alt="empty placeholder image">
                     <h3>unnamed project</h3>
-                    <p>unnamed project short summary</p>
+                    <p class="card-description">
+                        unnamed project short summary
+                    </p>
+                    <button class="dropdown-button" aria-label="Toggle preview text">
+                        <img src="images/arrow_down.svg" alt="" class="arrow-icon">
+                    </button>
                  </article>
             </section>
         </main>

@@ -296,12 +296,8 @@ footer {
     padding: 1rem;
 }
 
-.highlight img,
-.highlight video,
-.highlight iframe,
-.preview-card img,
-.preview-card video,
-.preview-card iframe {
+.highlight-media,
+.preview-media {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: contain;                    /* change to cover when using non-placeholder */
@@ -318,6 +314,38 @@ footer {
     border-radius: 50%;
     margin-right: 6px;
     vertical-align: super;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+/* Arrow Icon*/
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);                        /* Points down by default */
+}
+
+.preview-card .card-description {
+    display: none;                                 /* Hidden by default */
+}
+
+/* Preview card expanded */
+.preview-card.active .card-description {
+    display: block;                                 /* Reveals paragraph text */
+}
+
+.preview-card.active .arrow-icon {
+    transform: rotate(180deg);                      /* Inverts */
 }
 
 #contact-form {
