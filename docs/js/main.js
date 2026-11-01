@@ -85,6 +85,18 @@ function createMessageObject(form) {
         };
 }
 
+function saveMessage(data) {
+    // Get existing messages or initialize an empty array
+    let messages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+    
+    // Push the new message object
+    messages.push(data);
+    
+    // Save back to localStorage
+    localStorage.setItem("contactMessages", JSON.stringify(messages));
+    console.log("Message stored locally. Total stored:", messages.length);
+}
+
 // Event listeners
 clearButton.addEventListener("click", function(event) {
     event.preventDefault();
@@ -114,8 +126,11 @@ submitButton.addEventListener("click", function(event) {
             // create message with correct structure
             const messageData = createMessageObject(targetForm);
 
-            // send message to author
-            console.log(messageData);
+            /* save message to localstorage
+               full release would send to backend api or */
+            saveMessage(messageData);
+
+            // 
 
             clearForm(targetForm);
         }
