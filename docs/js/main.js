@@ -8,6 +8,8 @@ const submitButton = document.querySelector("#submit");
 
 const errorList = document.querySelector("#errorlist");
 
+const cards = document.querySelectorAll('.preview-card');
+
 // Base variables
 
 let errors = [];
@@ -120,57 +122,62 @@ async function sendViaEmailJS(data) {
     }
 }
 
-// Event listeners
-clearButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    
-    // Modular targeting of form for reausability
-    const targetForm = event.target.closest("form");
-    
-    if (targetForm) {
-        clearForm(targetForm);
-    }
-});
-
-submitButton.addEventListener("click", async function(event) {
-    event.preventDefault();
-    
-    // Modular targeting of form for reausability
-    const targetForm = event.target.closest("form");
-    
-    // Validate input
-    let validInput = validateForm(targetForm);
-
-    if (validInput === true){
+// Event listeners for contact formula
+// If-claused to not cause errors as this doesnt apply to every .html
+if (clearButton) { 
+    clearButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        // Modular targeting of form for reausability
+        const targetForm = event.target.closest("form");
+        
         if (targetForm) {
-
-            console.log("message valid");
-            
-            // create message with correct structure
-            const messageData = createMessageObject(targetForm);
-
-            submitButton.disabled = true;
-            submitButton.textContent = "Sending...";
-            
-            // send to author via EmailJS api
-            const isSent = await sendViaEmailJS(messageData);
-
-            if (isSent) {
-                clearForm(targetForm);
-                submitButton.textContent = "Message sent!";
-                // Keeping button inactive to mitigate multiple messages for now..
-            } else {
-                // show error to user
-                const errorList = targetForm.querySelector("#errorlist");
-                if (errorList) {
-                    errorList.innerHTML = "<li>Failed to send message. Please try again later.</li>";
-                }
-            }
-
-            /* save message to localstorage
-               this release sends message via EmailJS instead 
-            saveMessage(messageData);            
-            */ 
+            clearForm(targetForm);
         }
-    }
-});
+    });
+}
+if (clearButton) {
+    submitButton.addEventListener("click", async function(event) {
+        event.preventDefault();
+        
+        // Modular targeting of form for reausability
+        const targetForm = event.target.closest("form");
+        
+        // Validate input
+        let validInput = validateForm(targetForm);
+
+        if (validInput === true){
+            if (targetForm) {
+
+                console.log("message valid");
+                
+                // create message with correct structure
+                const messageData = createMessageObject(targetForm);
+
+                submitButton.disabled = true;
+                submitButton.textContent = "Sending...";
+                
+                // send to author via EmailJS api
+                const isSent = await sendViaEmailJS(messageData);
+
+                if (isSent) {
+                    clearForm(targetForm);
+                    submitButton.textContent = "Message sent!";
+                    // Keeping button inactive to mitigate multiple messages for now..
+                } else {
+                    // show error to user
+                    const errorList = targetForm.querySelector("#errorlist");
+                    if (errorList) {
+                        errorList.innerHTML = "<li>Failed to send message. Please try again later.</li>";
+                    }
+                }
+
+                /* save message to localstorage
+                this release sends message via EmailJS instead 
+                saveMessage(messageData);            
+                */ 
+            }
+        }
+    });
+}
+
