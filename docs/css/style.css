@@ -335,6 +335,10 @@ footer {
     flex-direction: column;
     gap: 0.4rem;       
 }
+.works-card p {
+    text-align: left;
+    white-space: pre-line;
+}
 
 .preview-card .card-description {
     display: none;                                 /* Hidden by default */
