@@ -1,27 +1,28 @@
-# Portfolio och Projektwebbplats
+# Portfolio and Project Website
+This project is an interactive portfolio website. The goal is to provide a professional platform that clearly presents development projects, such as completed applications and games.
 
-Detta projekt är en webbplats utvecklad som en interaktiv portfolio. Målet är att webbplatsen blir en plattform som på ett professionellt och överskådligt vis presenterar utvecklingsprojekt, till exempel färdiga applikationer och spel.
+## Deployment
+The website is live and available at the following link:
+- https://mthorgren.github.io/tT-webbutveckling-projekt1/
 
-## Publicering
-Webbplatsen är publicerad och kan besökas via följande länk:
-* URL 
+## Technologies and Tools
+The project is built from scratch using the following technologies:
+- **HTML5:** Semantic structure and accessibility compliance (WCAG).
+- **CSS3:** Layout and typography to ensure a good user experience across all screen sizes.
+- **JavaScript:** Interactive elements and robust design.
+- **Git and GitHub:** Version control with thoughtful practice.
 
-## Teknik och verktyg
-Projektet är byggt från grunden med följande teknik:
-* **HTML5:** Semantisk struktur och tillgänglighetsanpassning (WCAG).
-* **CSS3:** Layout och typografi god användarupplevelse på alla skärmstorlekar.
-* **JavaScript:** Interaktiva element och robust design.
-* **Git & GitHub:** Versionshantering enligt god utvecklingspraxis
-
-## Projektstruktur
-Mappstrukturen i repot är uppdelad enligt följande:
+## Project Structure
+The repository folder structure is organized as follows:
 ```text
-├── design/             # Wireframes, mockups, stilreferens 
-├── docs/               # Källkod publicerad via GitHub Pages
-│   ├── css/            # Stilfiler
-│   ├── js/             # Interaktivitet och övrig logik i JavaScript
-│   ├── images/         # Bildmaterial
-│   ├── index.html      # Startsida
-│   ├── page2.html      # Sida 2
-│   └── page3.html      # Sida 3
-└── README.md           # Projektbeskrivning
+├── design/             # Wireframes, mockups, style references
+├── docs/               # Source code published via GitHub Pages
+│   ├── css/                # Style files
+│   ├── js/                 # JavaScript interactivity and logic
+│   ├── images/             # Image assets
+│   ├── works/              # Project pages
+│   ├── index.html          # Home/about
+│   ├── projects.html       # Projects overview
+│   └── contact.html        # Contact form
+├── templates/          # Template for project page
+└── README.md           # Project description
