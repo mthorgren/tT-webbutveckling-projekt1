@@ -97,7 +97,7 @@ main {
     max-width: 768px;
     flex: 1;
     margin: 0 auto;
-    padding: 1rem 1.5rem;
+    padding: 2rem 1.5rem;
 }
 
 header {
@@ -202,7 +202,7 @@ nav a.active::before {
     gap: 2rem;
     align-items: start;
     margin: 0 auto;
-    padding: 3rem 1rem;
+    padding: unset 1rem;
 }
 
 .about-text {
@@ -238,6 +238,7 @@ footer {
     background-color: var(--surface-light);
     color: var(--text-dark);
     margin-top: auto;
+    padding-top: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -342,7 +343,6 @@ footer {
     gap: 1.25rem;
     border: 1px solid var(--border-dark);
     padding: 2rem;
-    margin-top: 1rem;
 }
 
 /* Form Labels */
@@ -402,6 +402,9 @@ footer {
         justify-content: center; 
         gap: 1rem;
         
+    }
+    footer {
+        padding-top: unset;
     }
     .footer-links {
         gap: 8.5rem;
