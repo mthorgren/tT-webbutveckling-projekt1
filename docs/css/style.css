@@ -276,26 +276,10 @@ footer {
     list-style: none;
 }
 
-/*
-
-.footer-links ul a,
-.footer-links ul a:visited {
-    color: var(--link-blue);
-    text-decoration: none;
-}
-.footer-links ul a:hover {
-    color: var(--accent-crimson);
-}
-*/
-
-/* FIX footer links horisontal align on mobile */
-
 /* Logotype detailing */
 #logo::first-letter, #footer-logo::first-letter {
     color: var(--accent-crimson);
 }
-
-
 
 /* Fix centered gui to allow reasonable stretching only */
 #contact-form, 
@@ -308,6 +292,41 @@ footer {
     margin-right: auto;
 }
 
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border: 1px solid #333333;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+/* Form Labels */
+#contact-form label {
+    color: #e0e0e0;
+    margin-bottom: -0.5rem;
+}
+
+/* Textboxes and Textarea */
+#contact-form input,
+#contact-form textarea {
+    background-color: #0a0a0a; /* Deep black background */
+    border: 1px solid #555555; /* Grey border */
+    padding: 0.75rem 1rem;
+}
+#contact-form textarea {
+    resize: vertical;
+    max-width: 100%;
+    min-height: 180px;
+    max-height: 400px;
+}
+
+/* Focus State with Crimson Accent */
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: #cc0000; /* Red accent as selection outline instead */
+}
 
 /* Media queries */
 @media (min-width: 768px) {
