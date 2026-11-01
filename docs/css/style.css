@@ -117,9 +117,6 @@ header {
 header.scrolled nav a {
     padding: 0.3rem 1rem;   
 }
-header.scrolled .banner {
-    display: none;
-}
 
 /* specifics */
 .banner {
