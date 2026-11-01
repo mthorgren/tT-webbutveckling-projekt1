@@ -26,3 +26,17 @@ The repository folder structure is organized as follows:
 │   └── contact.html        # Contact form
 ├── templates/          # Template for project page
 └── README.md           # Project description
+```
+
+## Releases
+### v1.0.1 (next)
+Simply adding the project report to the repository. 
+
+### v1.0.0
+Full release with full feature functionality testing. 
+
+### v0.9.0-rc.1
+Release candidate including interactivity with javascript and further adjustments of all components.
+
+### v0.1.0
+Early stage release with only the initial html structure and css styling.
