@@ -205,7 +205,6 @@ nav a.active::before {
     gap: 2rem;
     align-items: start;
     margin: 0 auto;
-    padding: unset 1rem;
 }
 
 .about-text {
