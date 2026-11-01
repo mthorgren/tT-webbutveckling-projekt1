@@ -66,7 +66,6 @@ function validateForm(form) {
 
     // If validation fails; display errors. 
     if (!isValid) {
-        // alert(errors.join("\n"));
         displayErrors();
     }else {
         errorList.innerHTML = ""; // Clear errors if validation passes
@@ -97,12 +96,14 @@ submitButton.addEventListener("click", function(event) {
     let validInput = validateForm(targetForm);
     if (validInput === true ){
 
-        // submit message to author()
-        console.log("message valid")
+        console.log("message valid");
+        
+        // create message with correct structure
+
+        // send message to author
+
         if (targetForm) {
             clearForm(targetForm);
         }
     }
-
-
 });
