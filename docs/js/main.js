@@ -122,6 +122,32 @@ async function sendViaEmailJS(data) {
     }
 }
 
+// Event listeners for preview-card dropdown selection
+// If-claused to not cause errors as this doesnt apply to every .html
+if (cards) {
+    // For each preview card dropdown button
+    for (const card of cards) {
+        const dropdownButton = card.querySelector('.dropdown-button');
+        
+        // Attach event listener
+        dropdownButton.addEventListener('click', function() {
+            // Store state-when-clicked
+            const isAlreadyActive = card.classList.contains('active');
+            
+            // Fetch all cards and remove eventual active state
+            const allCards = document.querySelectorAll('.preview-card');
+            for (const otherCard of allCards) {
+                otherCard.classList.remove('active');
+            }
+            
+            // Unless the clicked card already was open, open it now
+            if (!isAlreadyActive) {
+                card.classList.add('active');
+            }
+        });
+    }
+}
+
 // Event listeners for contact formula
 // If-claused to not cause errors as this doesnt apply to every .html
 if (clearButton) { 
