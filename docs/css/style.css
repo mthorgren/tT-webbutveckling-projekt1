@@ -392,13 +392,17 @@ footer {
     border-color: var(--accent-crimson); /* Red accent as selection outline  */
 }
 
-/* Submit Button */
-#contact-form button[type="submit"] {
-    color: var(--text-dark);
-    padding: 0.4rem 1rem;
-    align-self: flex-start;
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
-#contact-form button[type="submit"]:hover {
+/*  Contact buttons styling */
+#contact-form button {
+    color: var(--text-dark);
+    padding: 0.5rem 2rem;
+}
+#contact-form button:hover {
     color: var(--accent-crimson); 
 }
 
@@ -468,4 +472,8 @@ footer {
         justify-content: center;
         gap: 1rem;
     }
+    .form-buttons {
+            flex-direction: row;
+            justify-content: space-between;
+        }
 }
