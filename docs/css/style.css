@@ -327,7 +327,10 @@ footer {
 
 .preview-card {
     align-items: center;    
-    text-align: center;        
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;       
 }
 
 .preview-card .card-description {
