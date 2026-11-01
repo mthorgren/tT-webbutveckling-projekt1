@@ -74,6 +74,17 @@ function validateForm(form) {
     return isValid;
 }
 
+function createMessageObject(form) {
+    // Reads input names and values
+    const formData = new FormData(form);
+    
+    return {
+        name: formData.get("name"),
+        message: formData.get("message"),
+        email: formData.get("email")
+        };
+}
+
 // Event listeners
 clearButton.addEventListener("click", function(event) {
     event.preventDefault();
@@ -94,15 +105,18 @@ submitButton.addEventListener("click", function(event) {
     
     // Validate input
     let validInput = validateForm(targetForm);
+
     if (validInput === true ){
-
-        console.log("message valid");
-        
-        // create message with correct structure
-
-        // send message to author
-
         if (targetForm) {
+
+            console.log("message valid");
+            
+            // create message with correct structure
+            const messageData = createMessageObject(targetForm);
+
+            // send message to author
+            console.log(messageData);
+
             clearForm(targetForm);
         }
     }
