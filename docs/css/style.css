@@ -214,8 +214,14 @@ nav a.active::before {
 .about-portrait {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
+    max-width: 280px;
     gap: 1rem;
+}
+
+.about-tags {
+    max-width: 100%;
+    overflow-wrap: break-word;                          /* Forces long unbroken tags to wrap */
 }
 
 #portrait {
