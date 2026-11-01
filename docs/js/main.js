@@ -141,7 +141,7 @@ window.addEventListener('scroll', function() {
 
 // Event listeners for preview-card dropdown selection
 // If-claused to not cause errors as this doesnt apply to every .html
-if (cards) {
+if (cards.length > 0) {
     // For each preview card dropdown button
     for (const card of cards) {
         const dropdownButton = card.querySelector('.dropdown-button');
@@ -179,7 +179,7 @@ if (clearButton) {
         }
     });
 }
-if (clearButton) {
+if (submitButton) {
     submitButton.addEventListener("click", async function(event) {
         event.preventDefault();
         
