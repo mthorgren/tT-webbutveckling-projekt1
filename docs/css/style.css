@@ -284,13 +284,20 @@ footer {
 
 /* Fix centered gui to allow reasonable stretching only */
 #contact-form, 
-.project-card, 
 .presentation-text, 
 .presentation-portrait {
     width: 100%;
     max-width: 768px; 
     margin-left: auto;
     margin-right: auto;
+}
+
+#project-previews {
+    padding: 1;
+}
+
+.preview-card {
+    
 }
 
 #contact-form {
@@ -374,5 +381,11 @@ footer {
     /* Override mobile exclusions */
     #overview-highlight {
         display: unset;
+    }
+
+    #project-previews {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
 }
