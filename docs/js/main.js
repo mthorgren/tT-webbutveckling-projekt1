@@ -1,5 +1,5 @@
 "use strict";
-// -Fetch DOM elements //
+// -Fetch elements for DOM manipulation- //
 
 const contactForm = document.querySelector("#contact-form");
 
@@ -10,10 +10,13 @@ const errorList = document.querySelector("#errorlist");
 
 const cards = document.querySelectorAll('.preview-card');
 
-// Base variables
+// -Base variables- //
 
 let errors = [];
 
+// -Functions- //
+
+// Render validation errors dynamically
 function displayErrors() {
     // Clear older errors
     errorList.innerHTML = "";
@@ -22,11 +25,11 @@ function displayErrors() {
         let errorListObject = document.createElement("li");
         let errorText = document.createTextNode(error);
         errorListObject.appendChild(errorText);
-
         errorList.appendChild(errorListObject);
     }
 };
 
+// Reset form fields and clear active error states
 function clearForm(form) {
     
     form.reset();
@@ -34,6 +37,7 @@ function clearForm(form) {
     errors = [];
 }
 
+// Validate user inputs for the form
 function validateForm(form) {
     const nameInput = form.querySelector("#name");
     const messageInput = form.querySelector("#message");
@@ -75,9 +79,8 @@ function validateForm(form) {
 
     return isValid;
 }
-
+// Create structured data object from form input values
 function createMessageObject(form) {
-    // Reads input names and values
     const formData = new FormData(form);
     
     return {
@@ -101,6 +104,7 @@ function saveMessage(data) {
 }
 */
 
+// Send form data to EmailJS and return true if successful, false if it fails
 async function sendViaEmailJS(data) {
     const serviceID = "service_bxyvghs";
     const templateID = "template_hft6aao";
@@ -122,7 +126,9 @@ async function sendViaEmailJS(data) {
     }
 }
 
-// Listen for window scroll events to adjust header style
+// -Event Listeners- //
+
+// Event listener for scrolling, adjusts header styling
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     
@@ -139,8 +145,8 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Event listeners for preview-card dropdown selection
-// If-claused to not cause errors as this doesnt apply to every .html
+// Event listener for preview-card dropdown selection
+// If-claused to only apply on relevant .html pages
 if (cards.length > 0) {
     // For each preview card dropdown button
     for (const card of cards) {
@@ -151,9 +157,8 @@ if (cards.length > 0) {
             // Store state-when-clicked
             const isAlreadyActive = card.classList.contains('active');
             
-            // Fetch all cards and remove eventual active state
-            const allCards = document.querySelectorAll('.preview-card');
-            for (const otherCard of allCards) {
+            // Close all other open cards first so only one card stays expanded at a time
+            for (const otherCard of cards) {
                 otherCard.classList.remove('active');
             }
             
@@ -165,8 +170,9 @@ if (cards.length > 0) {
     }
 }
 
-// Event listeners for contact formula
-// If-claused to not cause errors as this doesnt apply to every .html
+// Event listeners for contact form //
+// If-claused to only apply on relevant .html pages
+// Event listener for clearing form inputs
 if (clearButton) { 
     clearButton.addEventListener("click", function(event) {
         event.preventDefault();
@@ -179,6 +185,7 @@ if (clearButton) {
         }
     });
 }
+// Event listener for submitting contact form data
 if (submitButton) {
     submitButton.addEventListener("click", async function(event) {
         event.preventDefault();
