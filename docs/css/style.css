@@ -215,6 +215,15 @@ nav a.active::after {
     gap: 1rem;
 }
 
+.about-text a, 
+.about-text a:visited {
+    color: var(--link-blue);
+    text-decoration: none;
+}
+.about-text a:hover {
+    color: var(--accent-crimson)
+}
+
 .about-portrait {
     display: flex;
     flex-direction: column;
@@ -248,7 +257,21 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+.footer-links ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+}
 
+.footer-links ul a,
+.footer-links ul a:visited {
+    color: var(--link-blue);
+    text-decoration: none;
+}
+.footer-links ul a:hover {
+    color: var(--accent-crimson);
+}
 /* FIX footer links horisontal align on mobile */
 
 /* Logotype detailing */
@@ -288,4 +311,10 @@ footer {
         padding-left: unset;
         padding-right: unset;
     }
+    .footer-links ul {
+        display: unset;
+        flex-direction: unset;
+        gap: unset;
+    }
+
 }
