@@ -341,6 +341,12 @@ footer {
     color: var(--accent-crimson); 
 }
 
+/* Mobile exclusions */
+#overview-highlight {
+    display: none;
+}
+
+
 /* Media queries */
 @media (min-width: 768px) {
 
@@ -364,5 +370,9 @@ footer {
         flex-direction: unset;
         gap: unset;
     }
-
+    
+    /* Override mobile exclusions */
+    #overview-highlight {
+        display: unset;
+    }
 }
