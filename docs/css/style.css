@@ -261,8 +261,14 @@ footer {
 }
 
 /* Logotype detailing */
+#footer-logo {
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+}
+
 #logo::first-letter, #footer-logo::first-letter {
     color: var(--accent-crimson);
+
 }
 
 /* Fix centered gui to allow reasonable stretching only */
