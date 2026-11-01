@@ -85,6 +85,7 @@ function createMessageObject(form) {
         };
 }
 
+/* Inactive local message storing function
 function saveMessage(data) {
     // Get existing messages or initialize an empty array
     let messages = JSON.parse(localStorage.getItem("contactMessages")) || [];
@@ -95,6 +96,26 @@ function saveMessage(data) {
     // Save back to localStorage
     localStorage.setItem("contactMessages", JSON.stringify(messages));
     console.log("Message stored locally. Total stored:", messages.length);
+}
+*/
+
+async function sendViaEmailJS(data) {
+    const serviceID = "service_bxyvghs";
+    const templateID = "template_hft6aao";
+
+    // Map your form data object to the template parameters
+    const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        message: data.message
+    };
+
+    try {
+        const response = await emailjs.send(serviceID, templateID, templateParams);
+        console.log("Email successfully sent!", response.status, response.text);
+    } catch (error) {
+        console.error("Email dispatch failed:", error);
+    }
 }
 
 // Event listeners
@@ -109,7 +130,7 @@ clearButton.addEventListener("click", function(event) {
     }
 });
 
-submitButton.addEventListener("click", function(event) {
+submitButton.addEventListener("click", async function(event) {
     event.preventDefault();
     
     // Modular targeting of form for reausability
@@ -127,10 +148,12 @@ submitButton.addEventListener("click", function(event) {
             const messageData = createMessageObject(targetForm);
 
             /* save message to localstorage
-               full release would send to backend api or */
-            saveMessage(messageData);
+               this release sends message via EmailJS instead 
+            saveMessage(messageData);            
+            */
 
-            // 
+            // send to author via EmailJS api
+            await sendViaEmailJS(messageData);
 
             clearForm(targetForm);
         }
