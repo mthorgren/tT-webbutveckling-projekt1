@@ -352,12 +352,26 @@ footer {
 .preview-card h3 a,
 .preview-card h3 a:visited {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .preview-card h3 a:hover {
     color: var(--accent-crimson);
 }
+
+/* Container for embedded elements */
+.embed-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Force the iframe to fill the container */
+.embed-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
+
 #contact-form {
     display: flex;
     flex-direction: column;
