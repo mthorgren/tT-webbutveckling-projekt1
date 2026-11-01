@@ -207,7 +207,7 @@ nav a.active::after {
     display: inline-block;
     width: 6px;
     height: 6px;
-    background-color: #FF1E27; 
+    background-color: var(--accent-crimson); 
     border-radius: 50%;
     margin-left: 6px;
     vertical-align: middle;
@@ -293,11 +293,31 @@ footer {
 }
 
 #project-previews {
-    padding: 1;
+    padding: 1rem;
 }
 
-.preview-card {
-    
+.highlight img,
+.highlight video,
+.highlight iframe,
+.preview-card img,
+.preview-card video,
+.preview-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;                    /* change to cover when using non-placeholder */
+    border: 1px solid var(--border-dark);
+}
+
+/* Highlighted (active red selection dot */
+.preview-card.active h3::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-crimson); 
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: super;
 }
 
 #contact-form {
@@ -377,7 +397,11 @@ footer {
         flex-direction: unset;
         gap: unset;
     }
-    
+    #projects-overview {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
     /* Override mobile exclusions */
     #overview-highlight {
         display: unset;
