@@ -8,13 +8,28 @@ const submitButton = document.querySelector("#submit");
 
 const errorList = document.querySelector("#errorlist");
 
+// Base variables
 
+let errors = [];
+
+function displayErrors() {
+    // Clear older errors
+    errorList.innerHTML = "";
+    // Write current error message to DOM
+    for (let error of errors) {
+        let errorListObject = document.createElement("li");
+        let errorText = document.createTextNode(error);
+        errorListObject.appendChild(errorText);
+
+        errorList.appendChild(errorListObject);
+    }
+};
 
 function clearForm(form) {
     
     form.reset();
-    // Rensa eventuella felmeddelanden
-    // errorList.innerHTML = "";
+    errorList.innerHTML = "";
+    errors = [];
 }
 
 function validateForm(form) {
@@ -23,7 +38,7 @@ function validateForm(form) {
     const emailInput = form.querySelector("#email");
     
     let isValid = true;
-    let errors = [];
+    errors = [];
 
     // Validate name text input
     if (nameInput.value.trim() === "") {
@@ -51,7 +66,10 @@ function validateForm(form) {
 
     // If validation fails; display errors. 
     if (!isValid) {
-        alert(errors.join("\n"));
+        // alert(errors.join("\n"));
+        displayErrors();
+    }else {
+        errorList.innerHTML = ""; // Clear errors if validation passes
     }
 
     return isValid;
