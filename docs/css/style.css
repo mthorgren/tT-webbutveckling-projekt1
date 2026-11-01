@@ -321,18 +321,20 @@ footer {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 0.5rem;
 }
 
-/* Arrow Icon*/
+/* Dropdown arrow Icon*/
 .arrow-icon {
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: auto;
     transition: transform 0.3s ease;
     transform: rotate(0deg);                        /* Points down by default */
+}
+
+.preview-card {
+    align-items: center;    
+    text-align: center;        
 }
 
 .preview-card .card-description {
