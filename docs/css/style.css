@@ -29,8 +29,8 @@
     --h3-size: 15px;
     --h3-weight: 500;     
 
-    --nav-size: 14px;
-    --nav-weight: 500;          
+    --nav-size: 16px;
+    --nav-weight: 525;          
 
     --body-size: 13px;
     --body-weight: 400;         
@@ -149,8 +149,8 @@ nav ul {
 
 nav li {
     font-family: var(--font-body);
-    font-size: var(--body-size);
-    font-weight: var(--body-weight);
+    font-size: var(--nav-size);
+    font-weight: var(--nav-weight);
 }
 
 nav li:first-child {                                /* Manual leftmost border ensures no double-bordering.. */
