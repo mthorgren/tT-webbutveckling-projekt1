@@ -117,6 +117,9 @@ header {
 header.scrolled nav a {
     padding: 0.3rem 1rem;   
 }
+header.scrolled .banner {
+    display: none;
+}
 
 /* specifics */
 .banner {
@@ -125,6 +128,7 @@ header.scrolled nav a {
     padding-left: 10px;
     margin-top: auto;
     margin-bottom: auto;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
 .banner p {

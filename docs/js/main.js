@@ -122,6 +122,23 @@ async function sendViaEmailJS(data) {
     }
 }
 
+// Listen for window scroll events to adjust header style
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    
+    // Exit early if the header element does not exist
+    if (!header) {
+        return;
+    }
+    
+    // Trigger shrunk state when when scrolling past specific measure
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
 // Event listeners for preview-card dropdown selection
 // If-claused to not cause errors as this doesnt apply to every .html
 if (cards) {
