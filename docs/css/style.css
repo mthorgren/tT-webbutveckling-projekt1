@@ -41,6 +41,15 @@
     margin: 0;
     padding: 0;
 }
+/* Base link style behavior */
+a, 
+a:visited {
+    color: var(--link-blue);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--accent-crimson)
+}
 
 img {
     max-width: 100%;    
@@ -165,8 +174,6 @@ nav li:first-child {                                /* Manual leftmost border en
 }
 
 nav a {
-    color: var(--text-muted-dark);
-    text-decoration: none;
     padding: 1.6rem 1.5rem; 
     display: flex;
     justify-content: center;
@@ -177,8 +184,13 @@ nav a {
     border-bottom: 1px solid var(--border-dark);
 
     transition: padding 0.3s ease, font-size 0.3s ease;
+
+    color: var(--text-muted-dark);                      /* departure from base link behavior */
 }
 
+nav a:visited {
+    color: var(--text-muted-dark);                      /* departure from base link behavior */
+}
 
 /* Active navigation link red dot indicator */
 nav a.active {
@@ -214,7 +226,7 @@ nav a.active::after {
     flex-direction: column;
     gap: 1rem;
 }
-
+/*
 .about-text a, 
 .about-text a:visited {
     color: var(--link-blue);
@@ -223,7 +235,7 @@ nav a.active::after {
 .about-text a:hover {
     color: var(--accent-crimson)
 }
-
+*/
 .about-portrait {
     display: flex;
     flex-direction: column;
@@ -264,6 +276,8 @@ footer {
     list-style: none;
 }
 
+/*
+
 .footer-links ul a,
 .footer-links ul a:visited {
     color: var(--link-blue);
@@ -272,6 +286,8 @@ footer {
 .footer-links ul a:hover {
     color: var(--accent-crimson);
 }
+*/
+
 /* FIX footer links horisontal align on mobile */
 
 /* Logotype detailing */
