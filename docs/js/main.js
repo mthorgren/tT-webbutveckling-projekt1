@@ -113,8 +113,10 @@ async function sendViaEmailJS(data) {
     try {
         const response = await emailjs.send(serviceID, templateID, templateParams);
         console.log("Email successfully sent!", response.status, response.text);
+        return true; // success status
     } catch (error) {
         console.error("Email dispatch failed:", error);
+        return false; // failure status
     }
 }
 
@@ -139,7 +141,7 @@ submitButton.addEventListener("click", async function(event) {
     // Validate input
     let validInput = validateForm(targetForm);
 
-    if (validInput === true ){
+    if (validInput === true){
         if (targetForm) {
 
             console.log("message valid");
@@ -147,15 +149,28 @@ submitButton.addEventListener("click", async function(event) {
             // create message with correct structure
             const messageData = createMessageObject(targetForm);
 
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+            
+            // send to author via EmailJS api
+            const isSent = await sendViaEmailJS(messageData);
+
+            if (isSent) {
+                clearForm(targetForm);
+                submitButton.textContent = "Message sent!";
+                // Keeping button inactive to mitigate multiple messages for now..
+            } else {
+                // show error to user
+                const errorList = targetForm.querySelector("#errorlist");
+                if (errorList) {
+                    errorList.innerHTML = "<li>Failed to send message. Please try again later.</li>";
+                }
+            }
+
             /* save message to localstorage
                this release sends message via EmailJS instead 
             saveMessage(messageData);            
-            */
-
-            // send to author via EmailJS api
-            await sendViaEmailJS(messageData);
-
-            clearForm(targetForm);
+            */ 
         }
     }
 });
