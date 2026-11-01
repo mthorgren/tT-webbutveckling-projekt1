@@ -29,8 +29,11 @@ The repository folder structure is organized as follows:
 ```
 
 ## Releases
-### v1.0.1 (next)
-Simply adding the project report to the repository. 
+### v1.0.2 (next)
+Finishing last parts of report. 
+
+### v1.0.1 
+Adding of partially finished report. Pending a few sections and some example figures..
 
 ### v1.0.0
 Full release with full feature functionality testing. 
