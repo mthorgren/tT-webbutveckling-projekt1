@@ -29,7 +29,7 @@ The repository folder structure is organized as follows:
 ```
 
 ## Releases
-### v1.0.2 (next)
+### v1.0.2
 Finishing last parts of report. 
 
 ### v1.0.1 
