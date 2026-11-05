@@ -10,6 +10,9 @@ const errorList = document.querySelector("#errorlist");
 
 const cards = document.querySelectorAll('.preview-card');
 
+const menuButton = document.querySelector(".menu-toggle")
+const menu = document.querySelector(".menu")
+
 // -Base variables- //
 
 let errors = [];
@@ -144,6 +147,11 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+// Event listener for Mobile Nav Bar toggle
+menuButton.addEventListener("click", function(){
+    menu.classList.toggle("open")
+})
 
 // Event listener for preview-card dropdown selection
 // If-claused to only apply on relevant .html pages

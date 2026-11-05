@@ -116,6 +116,9 @@ header {
 
 /* Shrunk header state when scrolled */
 header.scrolled {
+    .menu.open {
+        display: none;
+    }
     .menu-toggle {
         padding-top: 0rem;
         padding-bottom: 0rem;
@@ -137,6 +140,7 @@ header.scrolled {
 
 .banner p {
     color: var(--text-muted-dark);
+    white-space: nowrap;
 }
 
 .menu {
@@ -149,6 +153,9 @@ header.scrolled {
     padding: 1rem;
 }
 
+.menu.open {
+    display:block;
+}
 nav {
     width: 100%;
     max-width: 768px;
