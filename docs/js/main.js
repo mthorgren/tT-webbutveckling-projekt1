@@ -132,6 +132,8 @@ async function sendViaEmailJS(data) {
 // -Event Listeners- //
 
 // Event listener for scrolling, adjusts header styling
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     
@@ -140,12 +142,18 @@ window.addEventListener('scroll', function() {
         return;
     }
     
-    // Trigger shrunk state when when scrolling past specific measure
-    if (window.scrollY > 50) {
+    // Whenever scrolling, store current scroll state and compare with last to detrmine if scroll is downwards
+    const currentScrollY = window.scrollY;
+    const isScrollingDown = currentScrollY > lastScrollY;
+
+    // Trigger scrolled state when when scrolling downwards, past specific measure
+    if (isScrollingDown && currentScrollY > 25) {
         header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
     }
+    // If scroll is upward, reset scrolled state
+    else if (!isScrollingDown && currentScrollY < 25) {
+            header.classList.remove('scrolled');
+        }
 });
 
 // Event listener for Mobile Nav Bar toggle
