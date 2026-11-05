@@ -13,11 +13,31 @@ const cards = document.querySelectorAll('.preview-card');
 const menuButton = document.querySelector(".menu-toggle")
 const menu = document.querySelector(".menu")
 
+const header = document.querySelector('header');
+
 // -Base variables- //
 
 let errors = [];
+let lastScrollY = window.scrollY;
 
 // -Functions- //
+
+// Update header based on scroll direction 
+function updateHeaderOnScroll() {
+    // Whenever scrolling, store current scroll state and compare with last to detrmine if scroll is downwards
+    const currentScrollY = window.scrollY;
+    const isScrollingDown = currentScrollY > lastScrollY;
+
+    // Trigger scrolled state when when scrolling downwards, past specific measure
+    if (isScrollingDown && currentScrollY > 50) {
+        header.classList.add('scrolled');
+    }
+    // If scroll is upward, reset scrolled state
+    else if (!isScrollingDown && currentScrollY < 75) {
+            header.classList.remove('scrolled');
+        }
+
+}
 
 // Render validation errors dynamically
 function displayErrors() {
@@ -132,28 +152,12 @@ async function sendViaEmailJS(data) {
 // -Event Listeners- //
 
 // Event listener for scrolling, adjusts header styling
-let lastScrollY = window.scrollY;
-
 window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    
     // Exit early if the header element does not exist
     if (!header) {
         return;
     }
-    
-    // Whenever scrolling, store current scroll state and compare with last to detrmine if scroll is downwards
-    const currentScrollY = window.scrollY;
-    const isScrollingDown = currentScrollY > lastScrollY;
-
-    // Trigger scrolled state when when scrolling downwards, past specific measure
-    if (isScrollingDown && currentScrollY > 25) {
-        header.classList.add('scrolled');
-    }
-    // If scroll is upward, reset scrolled state
-    else if (!isScrollingDown && currentScrollY < 25) {
-            header.classList.remove('scrolled');
-        }
+    updateHeaderOnScroll();
 });
 
 // Event listener for Mobile Nav Bar toggle
