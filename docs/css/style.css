@@ -133,13 +133,8 @@ header.scrolled nav a {
     color: var(--text-muted-dark);
 }
 
-.menu a{
+.menu {
     display: none;
-    width: 100%;
-}
-
-.menu a.active {
-    display: block;
     width: 100%;
 }
 
