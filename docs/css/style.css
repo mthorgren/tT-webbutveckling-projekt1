@@ -110,8 +110,8 @@ header {
     width: 100%;
     background-color: var(--surface-light);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
 
 /* Shrunk header state when scrolled */
@@ -120,8 +120,7 @@ header.scrolled {
         display: none;
     }
     .menu-toggle {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
+        display: none;
     }
     p {
         display: none;
@@ -135,6 +134,7 @@ header.scrolled {
     padding-left: 10px;
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: auto;
     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
@@ -145,23 +145,38 @@ header.scrolled {
 
 .menu {
     display: none;
-    width: 100%;
 }
 
 .menu-toggle {
-    display: block;
+    display: flex;
     padding: 1rem;
+    align-self: center;
 }
 
+
 .menu.open {
-    display:block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-muted-dark);                      /* departure from base link coloration */
 }
+.menu.open ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding: 0.1rem;
+    align-self: end;
+}
+.menu.open li {
+    align-self: end;
+}
+
 nav {
     width: 100%;
     max-width: 768px;
     background-color: var(--surface-light);
-    display: flex;
-    align-items: center;
 }
 
 nav li {
@@ -177,6 +192,9 @@ nav a:visited {
 /* Active navigation link red dot indicator */
 nav a.active {
     color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 6px; 
 }
 
 nav a:hover {
@@ -185,13 +203,10 @@ nav a:hover {
 
 nav a.active::before {
     content: "";
-    display: inline-block;
     width: 6px;
     height: 6px;
     background-color: var(--accent-crimson); 
     border-radius: 50%;
-    margin-right: 6px;
-    transform: translateY(-0.35em);                     /* Equates the 'super' position used in project-cards red selection dot */
 }
 
 .about-section {
@@ -303,7 +318,7 @@ footer {
     background-color: var(--accent-crimson); 
     border-radius: 50%;
     margin-right: 6px;
-    vertical-align: super;
+    vertical-align: left;
 }
 
 .dropdown-button {
@@ -449,6 +464,9 @@ footer {
         flex-direction: row;
         justify-content: center; 
         gap: 1rem;
+    }
+    .banner{
+        margin-right: unset;
     }
     .menu-toggle {
         display: none;
