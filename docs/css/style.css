@@ -115,8 +115,14 @@ header {
 }
 
 /* Shrunk header state when scrolled */
-header.scrolled nav a {
-    padding: 0.3rem 1rem;   
+header.scrolled {
+    .menu-toggle {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+    p {
+        display: none;
+    }
 }
 
 
@@ -140,6 +146,7 @@ header.scrolled nav a {
 
 .menu-toggle {
     display: block;
+    padding: 1rem;
 }
 
 nav {
@@ -148,7 +155,6 @@ nav {
     background-color: var(--surface-light);
     display: flex;
     align-items: center;
-    padding: 0rem;    
 }
 
 nav li {
