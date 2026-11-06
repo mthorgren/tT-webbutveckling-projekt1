@@ -29,6 +29,13 @@ The repository folder structure is organized as follows:
 ```
 
 ## Releases
+
+### v1.0.4
+Full release with verified functionality of dropdown mobile navigation panel and minor improvements. 
+
+### v1.0.3-rc.1
+Release candidate for live testing newly implemented mobile dropdown navigation panel.
+
 ### v1.0.2
 Finishing last parts of report. 
 
