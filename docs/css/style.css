@@ -318,7 +318,6 @@ footer {
     background-color: var(--accent-crimson); 
     border-radius: 50%;
     margin-right: 6px;
-    vertical-align: left;
 }
 
 .dropdown-button {
