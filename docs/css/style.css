@@ -114,7 +114,7 @@ header {
     gap: 0.5rem;
 }
 
-/* Shrunk header state when scrolled */
+/* Hide header items when scrolling */
 header.scrolled {
     .menu.open {
         display: none;
@@ -126,7 +126,6 @@ header.scrolled {
         display: none;
     }
 }
-
 
 .banner {
     background-color: var(--surface-light);
@@ -152,7 +151,6 @@ header.scrolled {
     padding: 1rem;
     align-self: center;
 }
-
 
 .menu.open {
     display: flex;
@@ -189,16 +187,16 @@ nav a:visited {
     color: var(--text-muted-dark);                      /* departure from base link active coloration */
 }
 
+nav a:hover {
+    color: var(--accent-crimson);
+}
+
 /* Active navigation link red dot indicator */
 nav a.active {
     color: var(--text-dark);
     display: flex;
     align-items: center;
     gap: 6px; 
-}
-
-nav a:hover {
-    color: var(--accent-crimson);
 }
 
 nav a.active::before {
