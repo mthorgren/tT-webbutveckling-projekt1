@@ -24,19 +24,42 @@ let lastScrollY = window.scrollY;
 
 // Update header based on scroll direction 
 function updateHeaderOnScroll() {
-    // Whenever scrolling, store current scroll state and compare with last to detrmine if scroll is downwards
+    
     const currentScrollY = window.scrollY;
-    const isScrollingDown = currentScrollY > lastScrollY;
 
-    // Trigger scrolled state when when scrolling downwards, past specific measure
-    if (isScrollingDown && currentScrollY > 50) {
-        header.classList.add('scrolled');
+    // Force no scrolled state whenever at top
+    // This allows the scroll tresholds to be different (e.g. higher for upward)
+    if (currentScrollY === 0) {
+        header.classList.remove('scrolled');
+        lastScrollY = currentScrollY;
+        return;
     }
-    // If scroll is upward, reset scrolled state
-    else if (!isScrollingDown && currentScrollY < 75) {
-            header.classList.remove('scrolled');
-        }
+    
+    // Whenever scrolling, store current scroll state and compare with last to determine if its a downwards scroll
+    const diff = currentScrollY - lastScrollY;
+    const isScrolled = header.classList.contains('scrolled');
 
+    if (!isScrolled) {
+        // Trigger scrolled after scrolling down 40px relative to baseline
+        if (diff > 40) {
+            header.classList.add('scrolled');
+            lastScrollY = currentScrollY;
+        } 
+        // Reset baseline if user scrolls up
+        else if (diff < 0) {
+            lastScrollY = currentScrollY;
+        }
+    } else {
+        // Reset state after scrolling up 100px relative to baseline
+        if (diff < -100) {
+            header.classList.remove('scrolled');
+            lastScrollY = currentScrollY;
+        } 
+        // Reset comparison point whenever downscroll continues
+        else if (diff > 0) {
+            lastScrollY = currentScrollY;
+        }
+    }
 }
 
 // Render validation errors dynamically
